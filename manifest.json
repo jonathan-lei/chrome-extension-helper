@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Helper",
+    "description": "Helps.",
+    "version": "1.0",
+    "browser_action": {
+        "default_title": "Helper",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.quia.com/*"
+            ],
+            "js": [
+                "content_script.js"
+            ]
+        }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    }
+}
